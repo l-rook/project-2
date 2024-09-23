@@ -8,8 +8,8 @@ const MongoStore = require('connect-mongo');
 const bodyParser = require('body-parser');
 const Character = require('./models/Character');
 const User = require('./models/User');
-const characterRoutes = require('./controllers/characters'); // Updated
-const authRoutes = require('./controllers/auth'); // Updated
+const characterRoutes = require('./controllers/characters');
+const authRoutes = require('./controllers/auth');
 
 const app = express();
 

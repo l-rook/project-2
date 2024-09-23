@@ -11,7 +11,9 @@
         <ul>
             <% characters.forEach(character => { %>
                 <li>
-                    <span class="char-name"><%= character.name %> (Level: <%= character.level %>)</span>
+                    <a href="/characters/<%= character._id %>" class="char-name">
+                        <%= character.name %> (Level <%= character.level %>)
+                    </a>
                     <a href="/characters/<%= character._id %>/edit" class="edit-link">Edit</a>
                     <form action="/characters/<%= character._id %>/delete" method="POST" style="display:inline;">
                         <button type="submit" class="delete-button">Delete</button>

@@ -40,6 +40,11 @@ router.post('/', async (req, res) => {
     res.redirect('/characters');
 });
 
+router.get('/:id', async (req, res) => {
+    const character = await Character.findById(req.params.id).populate('user');
+    res.render('characters/show.ejs', { character });
+})
+
 router.get('/:id/edit', async (req, res) => {
     const character = await Character.findById(req.params.id);
     res.render('characters/edit.ejs', { character });

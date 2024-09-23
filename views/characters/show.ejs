@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Details</title>
+    <link rel="stylesheet" href="/show.css">
+</head>
+<body>
+    <h1>Character Details</h1>
+    <div class="character-details">
+        <h2>Name: <%= character.name %></h2>
+        <p><strong>Class:</strong> <%= character.class %></p>
+        <p><strong>Level:</strong> <%= character.level %></p>
+        <p><strong>Strength:</strong> <%= character.strength %></p>
+        <p><strong>Dexterity:</strong> <%= character.dexterity %></p>
+        <p><strong>Constitution:</strong> <%= character.constitution %></p>
+        <p><strong>Intelligence:</strong> <%= character.intelligence %></p>
+        <p><strong>Wisdom:</strong> <%= character.wisdom %></p>
+        <p><strong>Charisma:</strong> <%= character.charisma %></p>
+
+        <h3>Skills</h3>
+        <ul>
+            <% character.skills.forEach(skill => { %>
+                <li><%= skill %></li>
+            <% }); %>
+        </ul>
+
+        <h3>Equipment</h3>
+        <ul>
+            <% character.equipment.forEach(item => { %>
+                <li><%= item %></li>
+            <% }); %>
+        </ul>
+
+        <h3>Spells</h3>
+        <ul>
+            <% character.spells.forEach(spell => { %>
+                <li><%= spell %></li>
+            <% }); %>
+        </ul>
+    </div>
+    <a href="/characters">Back to Characters</a>
+</body>
+</html>
