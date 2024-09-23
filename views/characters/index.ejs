@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Character List</title>
+</head>
+<body>
+    <h1>Your Characters</h1>
+    <ul>
+        <% characters.forEach(character => { %>
+            <li>
+                <%= character.name %> (Level: <%= character.level %>)
+                <a href="/characters/<%= character._id %>/edit">Edit</a>
+                <form action="/characters/<%= character._id %>/delete" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/characters/new">Create New Character</a>
+    <form action="/logout" method="POST">
+        <button type="submit">Logout</button>
+    </form>
+</body>
+</html>

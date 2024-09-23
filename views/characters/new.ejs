@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Character</title>
+</head>
+<body>
+    <h1>Create New Character</h1>
+    <form action="/characters" method="POST">
+        <input type="text" name="name" placeholder="Character Name" required>
+        <input type="text" name="class" placeholder="Character Class" required>
+        <input type="number" name="level" placeholder="Character Level" required>
+        <input type="number" name="strength" placeholder="Strength" required>
+        <input type="number" name="dexterity" placeholder="Dexterity" required>
+        <input type="number" name="constitution" placeholder="Constitution" required>
+        <input type="number" name="intelligence" placeholder="Intelligence" required>
+        <input type="number" name="wisdom" placeholder="Wisdom" required>
+        <input type="number" name="charisma" placeholder="Charisma" required>
+        <input type="text" name="skills" placeholder="Skills (comma separated)">
+        <input type="text" name="equipment" placeholder="Equipment (comma separated)">
+        <input type="text" name="spells" placeholder="Spells (comma separated)">
+        <button type="submit">Create</button>
+    </form>
+</body>
+</html>
