@@ -18,7 +18,9 @@
 ## Further Improvement
 
 ### Improving CSS
- DnD character sheets have a specific look that I could't figure out how to match
+ DnD character sheets have a specific look that I couldn't figure out how to match
 
 ### Public Character Sheets
-Being able to share character sheets gives good inspiration to more story driven players and allows the min-maxers to see whatever OP builds other people come up with
+Being able to share character sheets gives good inspiration to more story-driven players and allows the min-maxers to see whatever OP builds other people come up with
+
+[Trello Board](https://trello.com/b/04lwXidR/unit-2-project-user-stories)
