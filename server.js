@@ -1,3 +1,5 @@
+require('dotenv').config();
+const port = process.env.PORT ? process.env.PORT : 3000
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -9,14 +11,13 @@ const characterRoutes = require('./controllers/characters'); // Updated
 const authRoutes = require('./controllers/auth'); // Updated
 
 const app = express();
-require('dotenv').config();
 
 mongoose.connect(process.env.MONGODB_URI);
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
-    secret: 'your_secret_key',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI })
@@ -34,6 +35,6 @@ app.get('/', (req, res) => {
 app.use('/', authRoutes);
 app.use('/characters', characterRoutes);
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is running on http://localhost:3000');
 });
