@@ -18,11 +18,11 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.get('/register', (req, res) => {
-    res.render('register');
+router.get('/sign-up', (req, res) => {
+    res.render('sign-up');
 });
 
-router.post('/register', async (req, res) => {
+router.post('/sign-up', async (req, res) => {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const newUser = new User({ username: req.body.username, password: hashedPassword });
     await newUser.save();

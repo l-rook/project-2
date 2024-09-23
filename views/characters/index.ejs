@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Character List</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <h1>Your Characters</h1>
-    <ul>
-        <% characters.forEach(character => { %>
-            <li>
-                <%= character.name %> (Level: <%= character.level %>)
-                <a href="/characters/<%= character._id %>/edit">Edit</a>
-                <form action="/characters/<%= character._id %>/delete" method="POST" style="display:inline;">
-                    <button type="submit">Delete</button>
-                </form>
-            </li>
-        <% }) %>
-    </ul>
-    <a href="/characters/new">Create New Character</a>
-    <form action="/logout" method="POST">
-        <button type="submit">Logout</button>
-    </form>
+    <div class="char">
+        <h1>Your Characters</h1>
+        <ul>
+            <% characters.forEach(character => { %>
+                <li>
+                    <span class="char-name"><%= character.name %> (Level: <%= character.level %>)</span>
+                    <a href="/characters/<%= character._id %>/edit" class="edit-link">Edit</a>
+                    <form action="/characters/<%= character._id %>/delete" method="POST" style="display:inline;">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+        <div class="actions">
+            <a href="/characters/new" class="create-link">Create New Character</a>
+            <form action="/logout" method="POST">
+                <button type="submit" class="logout-button">Logout</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -3,24 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Character</title>
+    <link rel="stylesheet" href="/edit.css">
 </head>
 <body>
-    <h1>Edit Character</h1>
-    <form action="/characters/<%= character._id %>" method="POST">
-        <input type="text" name="name" value="<%= character.name %>" required>
-        <input type="text" name="class" value="<%= character.class %>" required>
-        <input type="number" name="level" value="<%= character.level %>" required>
-        <input type="number" name="strength" value="<%= character.strength %>" required>
-        <input type="number" name="dexterity" value="<%= character.dexterity %>" required>
-        <input type="number" name="constitution" value="<%= character.constitution %>" required>
-        <input type="number" name="intelligence" value="<%= character.intelligence %>" required>
-        <input type="number" name="wisdom" value="<%= character.wisdom %>" required>
-        <input type="number" name="charisma" value="<%= character.charisma %>" required>
-        <input type="text" name="skills" value="<%= character.skills.join(', ') %>" placeholder="Skills (comma separated)">
-        <input type="text" name="equipment" value="<%= character.equipment.join(', ') %>" placeholder="Equipment (comma separated)">
-        <input type="text" name="spells" value="<%= character.spells.join(', ') %>" placeholder="Spells (comma separated)">
-        <button type="submit">Update</button>
-    </form>
+    <div class="edit-char">
+        <h1>Edit Character</h1>
+        <form action="/characters/<%= character._id %>" method="POST">
+            <input type="text" name="name" value="<%= character.name %>" required>
+            <input type="text" name="class" value="<%= character.class %>" required>
+            <input type="number" name="level" value="<%= character.level %>" required>
+            <input type="number" name="strength" value="<%= character.strength %>" required>
+            <input type="number" name="dexterity" value="<%= character.dexterity %>" required>
+            <input type="number" name="constitution" value="<%= character.constitution %>" required>
+            <input type="number" name="intelligence" value="<%= character.intelligence %>" required>
+            <input type="number" name="wisdom" value="<%= character.wisdom %>" required>
+            <input type="number" name="charisma" value="<%= character.charisma %>" required>
+            <input type="text" name="skills" value="<%= character.skills.join(', ') %>" placeholder="Skills (comma separated)">
+            <input type="text" name="equipment" value="<%= character.equipment.join(', ') %>" placeholder="Equipment (comma separated)">
+            <input type="text" name="spells" value="<%= character.spells.join(', ') %>" placeholder="Spells (comma separated)">
+            <button type="submit">Update</button>
+        </form>
+        <div class="back-link">
+            <a href="/characters">Back to Character List</a>
+        </div>
+    </div>
 </body>
 </html>
+
 

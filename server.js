@@ -1,4 +1,5 @@
 require('dotenv').config();
+const path = require('path');
 const port = process.env.PORT ? process.env.PORT : 3000
 const express = require('express');
 const mongoose = require('mongoose');
@@ -22,6 +23,8 @@ app.use(session({
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGODB_URI })
 }));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use((req, res, next) => {
     res.locals.user = req.session.user || null;
